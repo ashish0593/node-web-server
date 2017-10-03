@@ -15,7 +15,7 @@ app.use((req, res, next) => {
   console.log(log);
   fs.appendFile('server.log', log + '\n', (err) => {
   if (err) throw err;
-  console.log('The "data to append" was appended to file!');
+  //console.log('The "data to append" was appended to file!');
 });
   next();
 });
@@ -45,6 +45,12 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About PAge'
+  });
+});
+
+app.get('/portfolio', (req, res) => {
+  res.render('portfolio.hbs', {
+    pageTitle: 'portfolio PAge'
   });
 });
 
